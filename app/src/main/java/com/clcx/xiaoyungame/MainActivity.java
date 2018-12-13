@@ -83,6 +83,7 @@ public class MainActivity extends Activity {
         }).start();
     }
 
+    //下落，右侧下落
     public void falldown(View v) {
         new Thread(new Runnable() {
             @Override
