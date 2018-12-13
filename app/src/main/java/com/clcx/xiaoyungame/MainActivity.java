@@ -87,15 +87,17 @@ public class MainActivity extends Activity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                int acount=0;
-                for(int a=0;a<rights.size()/3+1;a++){
+                for(int a=0;a<rights.size();a+=3){
+                    final int acount=a;
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             fall(rights,acount);
                         }
                     });
+                    SystemClock.sleep(200);
                 }
+                rights.clear();
             }
         }).start();
     }
@@ -128,9 +130,9 @@ public class MainActivity extends Activity {
         }).start();
     }
 
-    private int fall(List<User> list,int acount) {
+    private void fall(List<User> list,int acount) {
         for (int b = 0; b < 3; b++) {
-            if (acount >= list.size() - 1) {
+            if (acount > list.size() - 1) {
                 break;
             }
             final User us = list.get(acount);
@@ -157,7 +159,6 @@ public class MainActivity extends Activity {
                     }).start();
             acount++;
         }
-        return acount;
     }
 
     private void randomMove() {
