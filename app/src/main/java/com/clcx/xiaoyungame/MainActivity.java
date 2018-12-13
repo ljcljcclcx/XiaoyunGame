@@ -137,8 +137,8 @@ public class MainActivity extends Activity {
                 break;
             }
             final User us = list.get(acount);
-            ViewCompat.animate(us.getIv()).scaleX(0.1f).scaleY(0.5f).setDuration(CHANGE_ANIM_TIME).start();
-            ViewCompat.animate(us.getTv()).scaleX(0.1f).scaleY(0.5f).setDuration(CHANGE_ANIM_TIME).setListener
+            ViewCompat.animate(us.getIv()).scaleX(0.6f).scaleY(0.6f).setDuration(CHANGE_ANIM_TIME).start();
+            ViewCompat.animate(us.getTv()).scaleX(0.6f).scaleY(0.6f).setDuration(CHANGE_ANIM_TIME).setListener
                     (new ViewPropertyAnimatorListener() {
 
 
